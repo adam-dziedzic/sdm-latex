@@ -19,7 +19,7 @@
 
 % numerowanie sekcji i podseckcji
 % umożliwia wstawianie \label dla sekcji, które pozwalają
-% na odwoływanie się do punktów przy pomocy \ref.
+% na odwoływanie się do punktów przy pomocy \ref
 \newcounter{sectioncounter} \setcounter{sectioncounter}{0} % create a counter and set it to 0
 \newcounter{subsectioncounter}[sectioncounter] \setcounter{subsectioncounter}{0} % a counter subsectioncounter is reset to zero every time sectioncounter is increased
 \newcommand\myabstract[1]{\hspace{-\parindent}\textbf{#1.}\hspace{6pt}}
