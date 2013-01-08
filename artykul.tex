@@ -1,0 +1,103 @@
+\documentclass[a4paper,twocolumn,11pt]{article}
+\usepackage{polski}
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\defaultfontfeatures{Mapping=tex-text}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\setmainfont{Nimbus Roman No9 L}
+\setmonofont{Anonymous Pro}
+
+\title{\LARGE\bf Prosty szablon \LaTeX{} na cele SDM-2.B}
+\author{\Large Jan Stępień
+\\ \Large Institute of Computer Science, Warsaw University of Technology,
+\\ \Large ul. Nowowiejska 15/19, 00-665 Warsaw, Poland
+\normalsize
+\\ jan@stepien.cc}
+\date{}
+
+% numerowanie sekcji i podseckcji
+% umożliwia wstawianie \label dla sekcji, które pozwalają
+% na odwoływanie się do punktów przy pomocy \ref.
+\newcounter{sectioncounter} \setcounter{sectioncounter}{0} % create a counter and set it to 0
+\newcounter{subsectioncounter}[sectioncounter] \setcounter{subsectioncounter}{0} % a counter subsectioncounter is reset to zero every time sectioncounter is increased
+\newcommand\myabstract[1]{\hspace{-\parindent}\textbf{#1.}\hspace{6pt}}
+\newcommand\mysec[1]{\refstepcounter{sectioncounter}\hspace{-\parindent}\textbf{\arabic{sectioncounter}. #1.}\hspace{6pt}}
+\newcommand\mysubsec[1]{\refstepcounter{subsectioncounter}\hspace{-\parindent}\textbf{\arabic{sectioncounter}.\arabic{subsectioncounter}. #1.}\hspace{3pt}}
+
+\begin{document}
+\maketitle
+
+\myabstract{Streszczenie}
+{
+\it
+Niniejszy plik stanowi prościutki szablon na potrzeby tworzenia artykułów
+w~ramach SDM-2.B.
+Szablon objęty jest prawami autorskimi.
+Postanowienia licencyjne przedstawione są w~punkcie 1.
+W punkcie 2. zawarto garść szczegółów technicznych.
+}
+
+\mysec{Licencja}
+\label{refmysec:licencja}
+Kod źródłowy, który posłużył do wygenerowania niniejszego pliku, może być
+wykorzystywany jedynie zgodnie z~postanowieniami poniższej licencji, zwanej
+dalej Licencją Pocztówkową.
+
+\mysubsec{Licencja pocztówkowa}
+Pliki opublikowane na warunkach Licencji Pocztówkowej mogą być swobodnie
+rozpowszechniane, wykorzystywane i~dowolnie modyfikowane, zarówno w~celach
+akademickich, prywatnych jak i~komercyjnych, bez uiszczania żadnych opłat
+licencyjnych, pod warunkiem spełnienia wszystkich poniższych warunków.
+
+\begin{enumerate}
+  \item
+  Rozpowszechniając pliki opublikowane na zasadach Licencji Pocztówkowej
+  w~postaci źródłowej, zmodyfikowane lub zachowane w postaci pierwotnej,
+  licencjobiorca zobowiązuje się dołączyć do nich pełen tekst niniejszej
+  licencji i~wyraźnie zaznaczyć, że rozpowszechniany plik został opublikowany na
+  jej warunkach.
+
+  \item
+  Korzystając z pliku opublikowanego na zasadach niniejszej licencji
+  licencjobiorca zobowiązuje się na wysłanie pierwotnemu licencjodawcy ładnej
+  pocztówki ze swojej zagranicznej podróży na bieżący adres pierwotnego
+  licencjodawcy. Bieżący adres należy uzyskać wysyłając stosowne zapytanie na
+  adres poczty elektronicznej jan@stepien.cc .  Pocztówka powinna zostać nadana
+  nie później niż w trakcie trzeciej zagranicznej podróży licencjobiorcy.
+
+  \item
+  Wszelkie niejasności wynikające z zastosowania warunków niniejszej licencji
+  będą rozwiązywane polubownie.
+
+  \item
+  W~wypadku niemożności dojścia do porozumienia na drodze polubownej, spór
+  zostanie rozstrzygnięty na drodze sądowej w sądzie właściwym dla miejsca
+  zamieszkania pierwotnego licencjodawcy.
+\end{enumerate}
+
+\mysubsec{Postanowienia końcowe}
+W przypadku korzystania z numerowania sekcji i podsekcji, pocztówka może zostać wysłana do Adama (na uprzednio zdefiniowanych zasadach), którego adres korespondencyjny można uzyskać wysyłając wiadomość na adres adam.dziedzi@gmail.com.
+
+\mysec{Sprawy techniczne}
+Do kompilacji należy użyć programu \texttt{xelatex}.
+Jeżeli zainstalowana dystrybucja \LaTeX{}a~\cite{latex} nie zawiera tego
+programu, mamy problem.
+\texttt{xelatex} pozwala na proste wykorzystywanie czcionek w~formatach TTF i~OTF.
+Bez wsparcia czcionek tych typów spełnienie wymagania dotyczącego użycia Times
+New Roman może wymagać odrobiny gimnastyki.
+
+W~niniejszym artykule użyto czcionki Nimbus Roman No9~L, która stanowi niemal
+identyczną alternatywę dla Times New Roman.
+Zmiany można dokonać przy pomocy modyfikacji komendy \verb|\setmainfont|.
+
+Można łatwo przejść do poprzedniej sekcji używając tej referencji~\ref{refmysec:licencja}.
+
+\paragraph{Bibliografia}
+
+\bibliographystyle{plplainurl}
+\renewcommand\section[2]{}
+\bibliography{bibliografia}
+
+\end{document}
