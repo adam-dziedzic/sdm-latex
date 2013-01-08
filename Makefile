@@ -1,5 +1,6 @@
 .SUFFIXES: .pdf .tex
 all: artykul.pdf
+artykul.pdf: bibliografia.bib
 .tex.pdf:
 	xelatex $< \
 		&& bibtex $(subst tex,aux,$<) \
